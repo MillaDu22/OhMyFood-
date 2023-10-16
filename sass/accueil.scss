@@ -1,0 +1,655 @@
+@import"./Utils/variables";
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+    body {
+        width:100%;
+        margin: 0 auto;
+        padding:0;
+    }
+    .loader {
+        display: block;
+        margin:0;
+        padding:0;
+        position: fixed;
+        background:$colour-lightgrey;
+        opacity:0.8;
+        inset:0;
+        z-index: 2;
+        width: 100%;
+        height:100%;
+        animation:loader 1s 2s forwards;
+    }
+    .load {
+        display:block;
+        width:80px;
+        height:80px;
+        position: relative;
+        margin-left:auto;
+        margin-right:auto;
+        top:44vh;
+    }
+    .load div {
+        position: absolute;
+        border-top: 3px solid purple;
+        border-bottom: 3px solid purple;
+        border-left: 1px solid $colour-black;
+        border-right: 1px solid $colour-black;
+        opacity: 1;
+        border-radius: 50%;
+        animation: load 2.5s cubic-bezier(0, 0.2, 0.8, 1) forwards;
+    }
+    .load div:nth-child(2) {
+        animation-delay: -0.5s;
+    }
+    @keyframes load {
+        0% {
+            top: 18px;
+            left: 18px;
+            width: 0;
+            height: 0;
+            opacity: 0;
+        }
+        4% {
+            top: 36px;
+            left: 36px;
+            width: 0;
+            height: 0;
+            opacity: 0;
+        }
+        5% {
+            top: 36px;
+            left: 36px;
+            width: 0;
+            height: 0;
+            opacity: 1;
+        }
+        100% {
+            top: 0px;
+            left: 0px;
+            width: 72px;
+            height: 72px;
+            opacity: 0;
+        }
+    }
+    @keyframes loader {
+        0% {
+            transform:scale(1);
+        }
+        100% {
+                transform:scale(0);
+        }
+    }
+    header {
+        width:100%;
+        display:flex;
+        justify-content: center;
+        background:$colour-white;
+        box-shadow: 0px 2px 4px rgba(0 ,0 ,0 , 0.15);
+    }
+    
+    h1 {
+        font-family:$familylogotitre;
+        font-size:30px;
+        font-weight:400;
+        line-height: 44px;
+        color:$colour-texth1h2;
+    }
+    form {
+        width:100%;
+        background: $colour-localbar;
+    }
+    .fa-location-dot {
+        position:relative;
+        z-index: 2;
+        top:27px;
+        left:30%;
+        color:$colour-footer;
+    }
+    .localisation {
+        position:relative;
+        top:-8px;
+        display:flex;
+        flex-direction:row;
+        width:98.5%;
+        height:50px;
+        background:$colour-localbar;
+        font-family:$familytext;
+        font-style:normal;
+        font-weight:500;
+        line-height: 19px;
+        color:$colour-footer;
+        text-align: center;
+        border:none;
+        z-index: 1;
+    }
+    .réservations {
+        display:flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        width:100%;
+        height:287px;
+        background:$colour-lightgrey;
+    }
+    .h2résa {
+        font-family:$familytext;
+        font-size:24px;
+        font-weight: 700;
+        line-height:28px;
+        color:$colour-black;
+        text-align: center;
+    }
+    .résaP {
+        display:flex;
+        flex-direction:column;
+        text-align: center;
+        font-family:$familytext;
+        font-weight:300;
+        font-size:18px;
+        line-height:21px;
+        color:$colour-footer;
+        }
+    .btnexplore {
+        margin:0 auto;
+        display:flex;
+        background:$colour-fondpurple;
+        color:$colour-white;
+        font-size:16px;
+        font-family:$familytext;
+        font-weight:500;
+        line-height:19px;
+        box-shadow:0px 4px 10px rgba(0, 0, 0, 0.25);
+        border-radius: 25px;
+        padding:15px 20.75px 15px 20.75px;
+        border:none;
+    }
+    .btnexplore:hover{
+        background:$colour-fondpurple;
+        filter:brightness(1.1);
+        box-shadow:2px 6px 10px rgba(0, 0, 1, 0.25);
+    }
+    .h2fonct {
+        position:relative;
+        width:200px;
+        left:20px;
+        font-family: $familytext;
+        font-weight:700;
+        font-size:24px;
+        line-height:28px;
+        color:$colour-black;
+    }
+    .fonctionnement {
+        width:100%;
+        display:flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding:48px 0px 68px 0px;
+        background-color: $colour-white;
+    }
+    .listButton {
+        position:relative;
+        display:flex;
+        flex-direction:column;
+        align-items: center;
+        width:100%;
+    }
+    .rowbutton{
+        width:99%;
+        display:flex;
+        flex-direction: row;
+        justify-content: center;
+        padding-top:25px;
+    }
+    .fa-circle{
+        position:relative;
+        left:19px;
+        top:25px;
+        z-index: 1;
+        font-size: 22px;
+        color:$colour-primary;
+    }
+    .fa-1, .fa-2 {
+        position:relative;
+        left:3px;
+        top:29px;
+        z-index: 2;
+        color:$colour-white;
+        font-size:11px;
+    }
+    .fa-3 {
+        position:relative;
+        left:2px;
+        top:31px;
+        z-index: 2;
+        color:$colour-white;
+        font-size:11px;
+    }
+    .btnresto, .btnmenu, .btnmiam{
+        display:flex;
+        flex-direction: row;
+        justify-content:center;
+        position:relative;
+        width:322px;
+        height:72.38px;
+        background:$colour-lightgrey;
+        box-shadow:0px 4px 15px rgba(0, 0, 0, 0.15);
+        border-radius:20px;
+        padding-top:29.6px;
+        border:none;
+    }
+    .iconphone, .iconlist, .iconstore {
+        position: relative;
+        left:-30px;
+        color:#7E7E7E;
+    }
+    .iconphone{
+        font-size: 20px;
+    }
+    .iconlist{
+        font-size:16px;
+    }
+    .iconstore{
+        font-size: 18px;
+    }
+    .txtbtn{
+        position: relative;
+        /*left:30.49px;*/
+        font-family: $familytext;
+        color:$colour-black;
+        font-weight: 500;
+        line-height: 19px;
+        font-size: 16px;
+    }
+    .btnresto:hover, .btnmenu:hover, .btnmiam:hover {
+        box-shadow:2px 6px 15px rgba(0, 0, 2, 0.15);
+        background-color: #F5EDFF;
+            .iconphone, .iconlist, .iconstore {
+                color:$colour-primary;
+            }
+    }
+.restaurants {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding:54px 0px 52px 0;
+    width:100%;
+    background:$colour-lightgrey;
+}
+    .column-card {
+        width:91%;
+        position: relative;
+        margin:0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content:space-between;
+    }
+
+    .titreresto {
+        width:200px;
+        position:relative;
+        left:20px;
+        font-family: $familytext;
+        font-size:24px;
+        line-height:28px;
+        color:$colour-black;
+    }
+    .resto1, .resto2, .resto3, .resto4 {
+        position:relative;
+        margin:0 0 18px 0;
+        display:flex;
+        flex-direction:column;
+        width:100%;
+        height:251px;
+        background:$colour-white;
+        box-shadow:0px 4px 15px rgba(0, 0, 0, 0.1);
+        border-radius:15px;
+        overflow: hidden;
+    }
+    .img1, .img2, .img3, .img4 {
+        position:relative;
+        width:100%;
+        height:231px;
+        bottom:60px;
+        object-fit: cover;
+    }
+    .new {
+        position:absolute;
+        right:10px;
+        top:14.6px;
+        width:75.37px;
+        height:16px;
+        background:$colour-tertiary;
+        color:#008766;
+        font-family: $familytext;
+        font-size: 14px;
+        font-weight:500;
+        line-height: 16px;
+        text-align: center;
+        border-radius:2px;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+    }
+
+    .description {
+        display:flex;
+        flex-direction: column;
+        width:100%;
+        position:relative;
+        top:-70px;
+    }
+    .title-card {
+        position:relative;
+        left:12.81px;
+        top:10px;
+        width:60%;
+        height:20px;
+        font-family: $familytext;
+        font-weight:700;
+        font-size:18px;
+        line-height:21.09px;
+        }
+    .txt-card {
+        position:relative;
+        width:50%;
+        height:24px;
+        left:12.81px;
+        font-family: $familytext;
+        font-weight:300;
+        font-size:17px;
+        line-height:19.92px;
+        color:$colour-footer;
+    }
+    .like {
+        display:flex;
+        justify-content: flex-end;
+        position:relative;
+        top:10px;
+    }
+    .fa-regular.fa-heart{
+        padding-left:1px;
+        width:23px;
+        font-size: 22px;
+        position:relative;
+        right:10px;
+    }
+    .fa-heart:hover{
+        font-weight:bold;
+        background:  -webkit-linear-gradient(#FF79DA, #9356DC);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        cursor:pointer;
+    }
+    footer {
+        display:flex;
+        flex-direction: column;
+        position: relative;
+        width:100%;
+        box-sizing: border-box;
+        height:211px;
+        color:$colour-white;
+        background: $colour-footer;
+    }
+    .logofooter {
+        width:83%;
+        height:27px;
+        font-family:$familylogotitre;
+        font-weight:400;
+        font-size:18px;
+        line-height:26px;
+        padding-left:25px;
+    }
+    .article {
+        display:flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        position:relative;
+        width:99%;
+    }
+    .lien-footer {
+        width:100%;
+        text-decoration: none;
+        color:$colour-white;
+        height:20px;
+    }
+    .iconutensils{
+        font-size:16px;
+    }
+    .iconhandshake {
+        transform:rotate(135deg);
+        font-size: 13px;
+    }
+    .rowfooter {
+        position:relative;
+        display:flex;
+        flex-direction: row;
+        width:88%;
+        height:19px;
+        font-size: 16px;
+        padding-left:25px;
+    }
+    .txtoficon {
+        position: relative;
+        top:-35px;
+        left:10.08px;
+        height:19px;
+        width:80%;
+        font-family: $familytext;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 19px;
+    }
+    .mention, .contact {
+        height:20px;
+        width:75%;
+        position:relative;
+        color:$colour-white;
+        font-family: $familytext;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 19px;
+        padding-left:25px;
+    }
+    .mention, .contact {
+        top:-35px;
+    }
+    @media screen and (min-width: 769px) {
+    body {
+        width:100%;
+    }
+    .loader {
+        display: block;
+        margin:0;
+        padding:0;
+        position: fixed;
+        background:$colour-lightgrey;
+        opacity:0.8;
+        inset:0;
+        z-index: 2;
+        width: 100%;
+        height:100%;
+        animation:loader 1s 2s forwards;
+    }
+    .load {
+        width:80px;
+        height:80px;
+        position: relative;
+        margin-left:auto;
+        margin-right:auto;
+        top:44vh;
+    }
+    .load div {
+        position: absolute;
+        border-top: 3px solid purple;
+        border-bottom: 3px solid purple;
+        border-left: 1px solid $colour-black;
+        border-right: 1px solid $colour-black;
+        opacity: 1;
+        border-radius: 50%;
+        animation: load 2.5s cubic-bezier(0, 0.2, 0.8, 1) forwards;
+    }
+    .load div:nth-child(2) {
+        animation-delay: -0.5s;
+    }
+    @keyframes load {
+        0% {
+            top: 18px;
+            left: 18px;
+            width: 0;
+            height: 0;
+            opacity: 0;
+        }
+        4% {
+            top: 36px;
+            left: 36px;
+            width: 0;
+            height: 0;
+            opacity: 0;
+        }
+        5% {
+            top: 36px;
+            left: 36px;
+            width: 0;
+            height: 0;
+            opacity: 1;
+        }
+        100% {
+            top: 0px;
+            left: 0px;
+            width: 72px;
+            height: 72px;
+            opacity: 0;
+        }
+    }
+    @keyframes loader {
+        0% {
+            transform:scale(1);
+        }
+        100% {
+                transform:scale(0);
+        }
+    }
+    .fa-location-dot {
+        left:42%;
+    }
+    .btnexplore{
+        left:42%;
+    }    
+    .btnexplore:hover{
+        background:$colour-fondpurple;
+        filter:brightness(1.1);
+        box-shadow:2px 6px 10px rgba(0, 0, 1, 0.25);
+    }
+    .fonctionnement {
+        width:100%;
+        left:0px;
+        display: flex;
+        flex-direction:row;
+        flex-wrap: wrap;
+    }
+    .h2fonct{
+        text-align: left;
+        padding-left:8.7%;
+    }
+    .list-button {
+        position: relative;
+        width:80%;
+        display:flex;
+        flex-direction:row;
+        justify-content: space-between;
+        padding-bottom:20px;
+        margin:0px auto;
+    }
+    .rowbutton {
+        padding:0;
+        width:32%;
+        display: flex;
+        justify-content: center;
+    }
+    .btnresto, .btnmenu, .btnmiam {
+        width:323px;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        left:-10px;
+    }
+    .fa-circle {
+        top:28px;
+        left:10px;
+    }
+    .fa-3, .fa-2, .fa-1 {
+        top:33px;
+        left:-3px;
+    }
+    .txtbtn {
+        width:88%;
+    }
+    .iconphone, .iconlist, .iconstore {
+        left:9px;
+    }
+    .btnresto:hover, .btnmenu:hover, .btnmiam:hover{
+        box-shadow:4px 8px 15px rgba(0, 0, 1, 0.15);
+        background-color: #F5EDFF;
+        .iconphone, .iconlist, .iconstore {
+            color:$colour-primary;
+        }
+    }
+    .restaurants {
+        width:100%;
+    }
+    .titreresto{
+        text-align: left;
+        padding-left:8.7%;
+    }
+    .column-card {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width:80%;
+        padding:0% 10% 0% 10%;
+    }
+    .resto1, .resto2, .resto3, .resto4 {
+        width:45%;
+    }
+    .fa-heart:hover{
+        font-weight:bold;
+        background:  -webkit-linear-gradient(#FF79DA, #9356DC);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        cursor:pointer;
+    }
+    .title-card{
+        width:98%;
+    }
+    .txt-card {
+        width:98%;
+    }
+    footer {
+        flex-direction: row-reverse;
+        justify-content:flex-end;
+        width:100%;
+    }
+    .article {
+        width:68%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-left:7%;
+    }
+    .lien-footer{
+        position:relative;
+        width:20%;
+    }
+    .rowfooter, .contact, .mention {
+        width:100%;
+        left:0px;
+    }
+    .txtoficon {
+        width:208px;
+        top:-35px;
+    }
+    .logofooter{
+        position: relative;
+        width:90px;
+        top:75px;
+    }
+}
