@@ -1,0 +1,13 @@
+{
+    "name": "prototype",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "sass": "sass --watch ./Accueil/sass/accueil.scss:./Accueil/sass/accueil.css --style compressed",
+        "prefix": "postcss ./Accueil/sass/accueil.css --use autoprefixer -d./Accueil/sass/css/prefixed/"
+    },
+    "author": "",
+    "license": "ISC",
+    "browerslist": "4 last versions"
+}
