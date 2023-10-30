@@ -144,7 +144,7 @@ form {
     z-index: 1;
 }
 
-.réservations {
+.reservations {
     display:flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -153,7 +153,7 @@ form {
     background:$colour-lightgrey;
 }
 
-.h2résa {
+.h2resa {
     font-family:$familytext;
     font-size:24px;
     font-weight: 700;
@@ -162,7 +162,7 @@ form {
     text-align: center;
 }
 
-.résaP {
+.resaP {
     display:flex;
     flex-direction:column;
     text-align: center;
@@ -422,12 +422,31 @@ form {
     right:10px;
 }
 
-.fa-heart:hover{
+.fa-heart:hover {
     font-weight:bold;
-    background:  -webkit-linear-gradient(#FF79DA, #9356DC);
+    background:-webkit-linear-gradient(#FF79DA, #450691);
     background-clip: text;
     -webkit-text-fill-color: transparent;
     cursor:pointer;
+    animation: like 0.8s linear forwards;
+}
+
+@keyframes like {
+    0% {
+        opacity:0;
+    }
+    25% {
+        opacity:0.2;
+    }
+    50% {
+        opacity:0.4;
+    }
+    75% {
+        opacity:0.6;
+    }
+    100% {
+        opacity:1;
+    }
 }
 
 footer {
@@ -688,14 +707,6 @@ footer {
 
     .resto1, .resto2, .resto3, .resto4 {
         width:45%;
-    }
-
-    .fa-heart:hover {
-        font-weight:bold;
-        background:  -webkit-linear-gradient(#FF79DA, #9356DC);
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        cursor:pointer;
     }
 
     .title-card{

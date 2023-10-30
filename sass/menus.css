@@ -149,8 +149,26 @@ h2 {
           background-clip: text;
   -webkit-text-fill-color: transparent;
   cursor: pointer;
+  animation: like 0.8s linear forwards;
 }
 
+@keyframes like {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  75% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .decotitre {
   display: flex;
   position: relative;
@@ -293,17 +311,45 @@ h2 {
   }
 }
 .lidesserts:hover .boxcheck, .liplats:hover .boxcheck, .lientrees:hover .boxcheck {
-  width: 20%;
   display: flex;
   justify-content: center;
-  transition-delay: 0.4s;
+  animation: check 0.6s linear forwards;
+}
+@keyframes check {
+  0% {
+    width: 0%;
+  }
+  25% {
+    width: 5%;
+  }
+  75% {
+    width: 15%;
+  }
+  100% {
+    width: 20%;
+  }
 }
 .lidesserts:hover .h4entrees, .lidesserts:hover .h4plats, .lidesserts:hover .h4desserts, .lidesserts:hover p, .liplats:hover .h4entrees, .liplats:hover .h4plats, .liplats:hover .h4desserts, .liplats:hover p, .lientrees:hover .h4entrees, .lientrees:hover .h4plats, .lientrees:hover .h4desserts, .lientrees:hover p {
   width: 90%;
 }
 .lidesserts:hover .tarif, .liplats:hover .tarif, .lientrees:hover .tarif {
   left: 0;
-  transition-delay: 0.4s;
+  /*transition-delay:0.4s;*/
+  animation: price 0.5s linear forwards;
+}
+@keyframes price {
+  0% {
+    left: 25px;
+  }
+  25% {
+    left: 18px;
+  }
+  75% {
+    left: 6px;
+  }
+  100% {
+    left: 0px;
+  }
 }
 
 .titreentrees, .titreplats, .titredesserts {
@@ -515,14 +561,6 @@ footer {
   .fa-heart {
     font-size: 22px;
   }
-  .fa-regular.fa-heart:hover {
-    font-weight: bold;
-    background: -webkit-linear-gradient(#FF79DA, #450691);
-    -webkit-background-clip: text;
-            background-clip: text;
-    -webkit-text-fill-color: transparent;
-    cursor: pointer;
-  }
   .titreentrees, .titreplats, .titredesserts {
     width: 100%;
     text-align: left;
@@ -555,28 +593,6 @@ footer {
     width: 0%;
     display: flex;
     justify-content: center;
-  }
-  .lidesserts:hover .fa-circle-check, .liplats:hover .fa-circle-check, .lientrees:hover .fa-circle-check {
-    animation: tick 0.6s linear forwards;
-  }
-  @keyframes tick {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-  .lidesserts:hover .boxcheck, .liplats:hover .boxcheck, .lientrees:hover .boxcheck {
-    transition-delay: 0.4s;
-    width: 20%;
-  }
-  .lidesserts:hover .tarif, .liplats:hover .tarif, .lientrees:hover .tarif {
-    left: 0;
-    transition-delay: 0.4s;
-  }
-  .lidesserts:hover .h4entrees, .lidesserts:hover .h4plats, .lidesserts:hover .h4desserts, .lidesserts:hover p, .liplats:hover .h4entrees, .liplats:hover .h4plats, .liplats:hover .h4desserts, .liplats:hover p, .lientrees:hover .h4entrees, .lientrees:hover .h4plats, .lientrees:hover .h4desserts, .lientrees:hover p {
-    width: 90%;
   }
   .h4desserts, .h4plats, .h4entrees {
     position: relative;
